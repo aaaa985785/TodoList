@@ -1,0 +1,386 @@
+@import url("https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap");
+
+/* http://meyerweb.com/eric/tools/css/reset/ 
+   v2.0 | 20110126
+   License: none (public domain)
+*/
+/*css Reset*/
+html,
+body,
+div,
+span,
+applet,
+object,
+iframe,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+p,
+blockquote,
+pre,
+a,
+abbr,
+acronym,
+address,
+big,
+cite,
+code,
+del,
+dfn,
+em,
+img,
+ins,
+kbd,
+q,
+s,
+samp,
+small,
+strike,
+strong,
+sub,
+sup,
+tt,
+var,
+b,
+u,
+i,
+center,
+dl,
+dt,
+dd,
+ol,
+ul,
+li,
+fieldset,
+form,
+label,
+legend,
+table,
+caption,
+tbody,
+tfoot,
+thead,
+tr,
+th,
+td,
+article,
+aside,
+canvas,
+details,
+embed,
+figure,
+figcaption,
+footer,
+header,
+hgroup,
+menu,
+nav,
+output,
+ruby,
+section,
+summary,
+time,
+mark,
+audio,
+video {
+  margin: 0;
+  padding: 0;
+  border: 0;
+  font-size: 100%;
+  font: inherit;
+  vertical-align: baseline;
+}
+/* HTML5 display-role reset for older browsers */
+article,
+aside,
+details,
+figcaption,
+figure,
+footer,
+header,
+hgroup,
+menu,
+nav,
+section {
+  display: block;
+}
+body {
+  line-height: 1;
+}
+ol,
+ul {
+  list-style: none;
+}
+blockquote,
+q {
+  quotes: none;
+}
+blockquote:before,
+blockquote:after,
+q:before,
+q:after {
+  content: "";
+  content: none;
+}
+table {
+  border-collapse: collapse;
+  border-spacing: 0;
+}
+/*rwd img Reset*/
+img {
+  max-width: 100%;
+  height: auto;
+}
+/*全域border box*/
+html {
+  box-sizing: border-box;
+}
+*,
+*::before,
+*::after {
+  box-sizing: inherit;
+}
+
+body {
+  background-color: #e1e1e1;
+  font-family: "Roboto", sans-serif;
+}
+
+.header {
+  background-color: #4a90e2;
+  height: 76px;
+}
+
+.navbar {
+  /* border: 1px solid black; */
+  width: 50vw;
+  height: 76px;
+  margin: 0 auto;
+}
+
+.navbar ul {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  text-align: center;
+  list-style: none;
+  place-items: center;
+  /* gap: 30px; */
+  color: #00408b;
+}
+
+.navbar ul li {
+  /* border: 1px solid black; */
+  text-decoration: none;
+  width: 160px;
+  height: 76px;
+  display: grid;
+  align-items: center;
+  font-size: 24px;
+}
+
+.navbar > ul > li:hover {
+  border-bottom: 5px solid #00408b;
+  color: #ffffff;
+}
+
+.preset {
+  border-bottom: 5px solid #00408b;
+  color: #ffffff;
+}
+
+.content {
+  /* border: 1px solid black; */
+  width: 620px;
+  height: 330px;
+  margin: 0 auto;
+  margin-top: 24px;
+}
+
+.add {
+  width: 620px;
+  height: 65px;
+  background: #ffffff;
+  border: 2px solid #c8c8c8;
+  border-radius: 5px;
+
+  font-size: 24px;
+  color: #c8c8c8;
+  line-height: 60px;
+  padding-left: 24px;
+  cursor: pointer;
+}
+
+.list {
+  margin-top: 24px;
+  display: none;
+}
+
+.list .todos {
+  width: 620px;
+  height: 102px;
+  background-color: #f2f2f2;
+  border-radius: 5px;
+  margin-top: 24px;
+}
+
+.todos {
+  padding: 24px 32px;
+}
+
+.control {
+  display: grid;
+  grid-template-columns: 88% 14%;
+  /* border: 1px solid black; */
+  align-items: center;
+}
+
+.control .title {
+  /* line-height: 100px; */
+  font-size: 24px;
+  display: flex;
+  font-weight: bold;
+}
+
+.control .title input {
+  width: 24px;
+  height: 24px;
+  margin-right: 20px;
+}
+
+.control .cions {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 22px;
+}
+
+.icon {
+  display: grid;
+  grid-template-columns: 15% 7% 5%;
+  /* border: 1px solid black; */
+  margin-top: 16px;
+  margin-left: 48px;
+}
+
+.edit {
+  /* margin-top: 24px; */
+  height: 0;
+  overflow: hidden;
+  transition: all 0.5s;
+  box-shadow: 0 4px 4px 0 #c8c8c8;
+  border-radius: 5px;
+}
+
+.open + .edit {
+  height: 520px;
+}
+
+.edit .control {
+  padding: 24px 32px;
+  background-color: #f2f2f2;
+  border-top-left-radius: 5px;
+  border-top-right-radius: 5px;
+  border-bottom: 2px solid #c8c8c8;
+}
+
+.edit .control .titleText input {
+  background: none;
+  border: none;
+  width: 300px;
+  font-size: 24px;
+  font-weight: bold;
+  outline: none;
+}
+
+.edit > form {
+  padding: 24px;
+  padding-top: 3.6px;
+  padding-left: 72px;
+  background-color: #f2f2f2;
+}
+
+.edit > form > label {
+  display: block;
+  margin-bottom: 8px;
+  margin-top: 22px;
+}
+.edit .button {
+  display: flex;
+}
+
+.edit .cancel {
+  width: 310px;
+  height: 60px;
+  background-color: white;
+  text-align: center;
+  line-height: 60px;
+  color: #d0021b;
+  border-bottom-left-radius: 5px;
+  cursor: pointer;
+}
+
+.edit .addTack {
+  width: 310px;
+  height: 60px;
+  background-color: #4a90e2;
+  text-align: center;
+  line-height: 60px;
+  color: white;
+  border-bottom-right-radius: 5px;
+  cursor: pointer;
+}
+
+.edits {
+  /* margin-top: 24px; */
+
+  height: 0px;
+  overflow: hidden;
+  transition: all 0.5s;
+  box-shadow: 0 4px 4px 0 #c8c8c8;
+  border-radius: 5px;
+}
+
+.opens + .edits {
+  height: 440px;
+}
+
+.edits > form {
+  border-top: 2px solid #c8c8c8;
+  padding: 24px;
+  padding-top: 3.6px;
+  padding-left: 72px;
+  background-color: #f2f2f2;
+}
+
+.edits > form > label {
+  display: block;
+  margin-bottom: 8px;
+  margin-top: 22px;
+}
+.edits .button {
+  display: flex;
+}
+
+.edits .cancel {
+  width: 310px;
+  height: 60px;
+  background-color: white;
+  text-align: center;
+  line-height: 60px;
+  color: #d0021b;
+  border-bottom-left-radius: 5px;
+  cursor: pointer;
+}
+
+.edits .addTack {
+  width: 310px;
+  height: 60px;
+  background-color: #4a90e2;
+  text-align: center;
+  line-height: 60px;
+  color: white;
+  border-bottom-right-radius: 5px;
+  cursor: pointer;
+}
