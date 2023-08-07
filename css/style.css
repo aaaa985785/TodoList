@@ -255,6 +255,12 @@ body {
   grid-template-columns: 1fr 1fr;
   gap: 22px;
 }
+.control .cionsa {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  /* gap: 1px; */
+  /* border: 1px solid black; */
+}
 
 .icon {
   display: grid;
